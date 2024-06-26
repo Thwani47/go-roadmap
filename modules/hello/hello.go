@@ -1,11 +1,30 @@
-package hello
+package main
 
-import "rsc.io/quote/v3"
+import (
+	"fmt"
+	"log"
 
-func Hello() string {
-	return quote.HelloV3()
-}
+	"github.com/Thwani47/go-roadmap/modules/greetings"
+)
 
-func Proverb() string {
-	return quote.Concurrency()
+func main() {
+	log.SetPrefix("greetings: ")
+	log.SetFlags(0)
+
+	message, err := greetings.Hello("Alice")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(message)
+
+	names := []string{"Alice", "Bob", "Cindy"}
+	messages, err := greetings.Hellos(names)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(messages)
 }
