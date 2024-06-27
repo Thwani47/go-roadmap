@@ -6,3 +6,5 @@ https://roadmap.sh/golang
 - [Error handling](./error-handling/notes.md)
 - [Defer](./deferred-functions-calls/notes.md)
 - [Panic and recover](./panic-and-recover/notes.md)
+- [Go Modules](./modules/notes.md)
+- [Types, Type Assertion, Switches](./types/notes.md)
