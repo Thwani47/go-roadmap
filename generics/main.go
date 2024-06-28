@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"golang.org/x/exp/constraints"
+)
 
 type Number interface {
 	int | float64
@@ -56,7 +60,22 @@ func (l *List[T]) ListNodes() []T {
 	return nodes
 }
 
+func Min[T constraints.Ordered](x, y float64) float64 {
+	if x < y {
+		return x
+	}
+
+	return y
+}
+
 func main() {
+	min := Min[int](10, 12)
+	fmt.Println(min)
+	fmt.Println(Min[float64](10.1, 12.2))
+
+	fmin := Min[float64]
+	fmt.Println(fmin(10, 12))
+
 	ints := map[string]int{
 		"one":   1,
 		"two":   2,
