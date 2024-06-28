@@ -8,3 +8,5 @@ https://roadmap.sh/golang
 - [Panic and recover](./panic-and-recover/notes.md)
 - [Go Modules](./modules/notes.md)
 - [Types, Type Assertion, Switches](./types/notes.md)
+- [Interfaces](./interfaces/notes.md)
+- [Generics](./generics/notes.md)
