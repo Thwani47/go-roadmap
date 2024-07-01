@@ -1,0 +1,12 @@
+## Go Context
+- `Context` is a package in Go that allows you to pass request-scoped values, cancelation signals, and deadlines across API boundaries and between processes.
+- We can think of contexts as buckets that contain extra infomaion about a request.
+- We use the context package mainly for cancellation and cancellation propagation.
+- We can also use context package to send values. This is useful if we want to log information in our requests
+- `context.Background` - we create a root context and we have no cancellation. It is a non-nil, empty context. it is never canceled, has no values, and has no deadline. Used typically in tests, in the main function, during initialization, and as a top-level context for incoming requests
+- We can create context using
+    - `context.Background()`
+    - `context.WithCancel()`
+    - `context.WithTimeout()`
+    - `context.WithDeadline()`
+- We cannot pass context values across servers. If we want to send values we can use headers or request bodies
